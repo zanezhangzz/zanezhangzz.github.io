@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../../style/global.css">
+    <title>Spring Colud组件简介</title>
+</head>
+<body>
+    
+    <h1>Spring Colud组件简介</h1>
+
+    <h3>config</h3>
+
+    <p>分布式配置中心</p>
+
+    <h3>eureka</h3>
+
+    <p>服务注册发现中心，类似zk</p>
+
+    <h3>ribbon</h3>
+
+    <p>负载均衡</p>
+
+    <h3>feign</h3>
+
+    <p>简化客户端编写，可插拔注解，消息转换。</p>
+
+    <p>feign 使得Eureka和Ribbon的使用更为简单。</p>
+
+    <h3>hystrix</h3>
+
+    <p>断路器。防止压力过载。 当一类服务压力过大的时候，可以做降级处理。（用其他逻辑代替）</p>
+
+    <p>hystrix-dashboard，可以监控断路器状态。</p>
+
+    <h3>zuul</h3>
+
+    <p>服务网关。权限控制控制，部分接口转换外部接口。监控，路由，弹性等</p>
+
+    <h3>bus</h3>
+
+    <p>消息总线。处理类似配置变更通知</p>
+
+    <h3>sleuth</h3>
+
+    <p>服务追踪组件，继承了 zipkin</p>
+
+    <h3>turbine</h3>
+
+    <p>监控聚合，使用Hystrix监控，我们需要打开每一个服务实例的监控信息来查看。</p>
+
+    <p>而Turbine可以帮助我们把所有的服务实例的监控信息聚合到一个地方统一查看。这样就不需要挨个打开一个个的页面一个个查看。</p>
+
+</body>
+</html>

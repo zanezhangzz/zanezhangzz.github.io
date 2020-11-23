@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../../style/global.css">
+    <title>systemctl启动脚本参考</title>
+</head>
+<body>
+    
+    <h1>systemctl启动脚本参考</h1>
+
+    <pre class="code">[Unit]
+Description=description
+After=network.target syslog.target
+
+[Service]
+ExecStart=/usr/bin/java -jar -Xms1G -Xmx2G /usr/local/app.jar --spring.profiles.active=test
+SuccessExitStatus=143
+Restart=always
+RestartSec=5
+StartLimitInterval=0
+
+[Install]
+WantedBy=multi-user.target</pre>
+
+</body>
+</html>

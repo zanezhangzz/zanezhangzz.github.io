@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../../style/global.css">
+    <title>ETH JSON RPC</title>
+</head>
+<body>
+
+    <h1>ETH JSON RPC</h1>
+
+    <p>同步查看</p>
+
+    <pre class="code">curl 0.0.0.0:8080  \
+-X POST -H 'content-type:application/json' \
+--data '{"jsonrpc":"2.0","method":"eth_syncing","params":[],"id":1}'
+</pre>
+
+    <p>返回参考</p>
+
+    <pre class="code">{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": {
+        "currentBlock": "0x7fa4d5",
+        "highestBlock": "0x7fa54f",
+        "knownStates": "0x8635195",
+        "pulledStates": "0x863110c",
+        "startingBlock": "0x3fcce8"
+    }
+}</pre>
+    
+</body>
+</html>

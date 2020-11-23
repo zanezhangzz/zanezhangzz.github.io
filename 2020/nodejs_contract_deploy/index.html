@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../../style/global.css">
+    <title>NodeJS合约部署</title>
+</head>
+<body>
+    
+    <h1>NodeJS合约部署</h1>
+
+    <p>安装依赖 注意版本</p>
+
+    <pre class="code">npm install solc@0.4.18
+npm install web3@^0.20.1
+npm install ethereumjs-tx@^1.3.7</pre>
+
+    <p>部署脚本</p>
+
+    <pre class="code">var Web3 = require('web3');
+var Tx = require('ethereumjs-tx');
+var solc = require('solc');
+var fs = require('fs');
+
+//init
+if (typeof web3 !== 'undefined') {
+    web3 = new Web3(web3.currentProvider);
+} else {
+    web3 = new Web3(new Web3.providers.HttpProvider("https://ropsten.infura.io/v3/1b8...b0"));
+}
+var fromAddr = '0x97...5B7';
+var count = web3.eth.getTransactionCount(fromAddr);
+var gasPrice = web3.eth.gasPrice;
+var gasLimit = 3000000;
+var privateKey = new Buffer.from('bb07...ed3c', 'hex');
+
+//编译合约，获得bytecode
+var source = fs.readFileSync("./test.sol", "utf8");
+var compilied = solc.compile(source, 1);
+var bytecode = compilied.contracts[':CallMeChallenge'].bytecode;
+
+//要打包的交易信息
+var rawTx = {
+    'from': fromAddr,
+    'nonce': web3.toHex(count),
+    'gasPrice': web3.toHex(gasPrice),
+    'gasLimit': web3.toHex(gasLimit),
+    'value': '0x0',
+    'data': '0x'+bytecode
+};
+var tx = new Tx(rawTx);
+tx.sign(privateKey);
+var serializedTx = tx.serialize();
+var hashTx = web3.eth.sendRawTransaction('0x'+serializedTx.toString('hex'));
+console.log('txHash: ' + hashTx);
+
+var makeTx;
+while (true) {
+    makeTx = web3.eth.getTransaction(hashTx);
+    if (makeTx["blockNumber"] !== null) {
+        var receipt = web3.eth.getTransactionReceipt(hashTx);
+        console.log("address: " + receipt["contractAddress"]);
+        break;
+    }
+}</pre>
+
+    <h3>参考</h3>
+    <p><a href="https://www.w3xue.com/exp/article/201911/65226.html" target="_blank">https://www.w3xue.com/exp/article/201911/65226.html</a></p>
+
+</body>
+</html>
