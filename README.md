@@ -1,1 +1,1 @@
-# Fanta's github pages project
+# Zane Blog

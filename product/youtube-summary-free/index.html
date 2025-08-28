@@ -1,0 +1,102 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Free YouTube Video Summary</title>
+  <style>
+    html, body {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      background: #13161b;
+      color: #fff;
+      font-size: 16px;
+    }
+    
+    .app {
+      height: 100%;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      
+      .container {
+        flex: 1;
+        max-width: 600px;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;
+        
+        .logo {
+          img {
+            width: 200px;
+            height: 200px;
+          }
+        }
+        
+        .install {
+          margin: 40px 0;
+          
+          .button {
+            width: 300px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: white;
+            border-radius: 12px;
+            
+            a {
+              color: #000;
+              text-decoration: none;
+            }
+          }
+        }
+        
+        .desc {
+          margin-top: 10px;
+        }
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="app">
+  <div class="container">
+    <div class="logo">
+      <img src="logo.jpg " alt="logo"/>
+    </div>
+    <div class="install">
+      <div class="button">
+        <a href="https://chromewebstore.google.com/" target="_blank">Install on Chrome Store</a>
+      </div>
+    </div>
+    <div class="desc">
+      <p>"Free YouTube Video Summary" is a simple and lightweight Chrome extension.</p>
+      <p>Now, Gemini can directly summarize video content, <span style="text-decoration: underline">even if the video doesn't have subtitles</span>.
+      </p>
+      <p>This plugin allows you to send the current video's URL to Gemini with a single click for automatic
+        submission.</p>
+      <p>You can also customize your prompts and choose your preferred model.</p>
+      <p>In my tests, I found that besides Gemini, Grok can handle some videos, but it isn't very stable. ChatGPT
+        performs even more poorly.</p>
+      <p>I've decided to keep the options for Grok and ChatGPT, as AI is advancing rapidly. They will likely support
+        this functionality soon.</p>
+    </div>
+    <div class="desc">
+      <p>"免费YouTube视频总结" 是一个简单小巧的 Chrome 插件。</p>
+      <p>现在 Gemini 已经可以直接总结视频中的内容了，<span style="text-decoration: underline">无论视频是否存在字幕</span>。
+      </p>
+      <p>这款插件可以一键将当前视频的地址传递到 Gemini 中，并且自动提交。</p>
+      <p>你还可以自定义提示词，以及选择模型。</p>
+      <p>我测试下来，除了 Gemini，Grok 也可以处理部分视频，但是不够稳定。ChatGPT 则表现的更差。</p>
+      <p>我还是保留了 Grok 和 ChatGPT，现在 AI 发展速度很快。可能它们很快就会支持。</p>
+    </div>
+  </div>
+</div>
+</body>
+</html>

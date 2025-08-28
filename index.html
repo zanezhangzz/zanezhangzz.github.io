@@ -1,32 +1,162 @@
-<!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="./style/global.css">
-	<title>芬达博客</title>
+  <title>Zane</title>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+    }
+    
+    body {
+      background-color: #141414;
+      font-family: Newsreader, "Noto Sans", sans-serif;
+      color: white;
+    }
+    
+    .page-wrapper {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+    
+    .layout-container {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      flex-grow: 1;
+    }
+    
+    .main-content {
+      display: flex;
+      justify-content: center;
+      padding: 20px 40px;
+    }
+    
+    .content-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      flex: 1 1;
+      max-width: 500px;
+    }
+    
+    .profile-section {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      flex: 1;
+      padding: 10px;
+    }
+    
+    .profile-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      
+      .avatar {
+        width: 120px;
+        border-radius: 9999px;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        aspect-ratio: 1 / 1;
+      }
+      
+      .details {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      
+      .name {
+        color: #ffffff;
+        font-size: 22px;
+        font-weight: 700;
+        text-align: center;
+        margin: 0 0 2px 0;
+      }
+      
+      .contact {
+        color: #ababab;
+        font-size: 16px;
+        font-weight: 400;
+        
+        a {
+          margin: 0 5px;
+          color: #ababab;
+          text-decoration: none;
+        }
+        
+        a:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+    
+    .articles-section {
+      display: flex;
+      flex-direction: column;
+      margin-top: 20px;
+      color: #ffffff;
+      
+      .article {
+        margin: 10px 0;
+        a {
+          color: white;
+          text-decoration: none;
+          
+          p {
+            margin: 0;
+          }
+        }
+        a:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  </style>
 </head>
 <body>
-	<h1>芬达博客</h1>
-
-	<h3>2020</h3>
-
-	<ul class="list">
-		<li><a href="./2020/frp_windows/index.html">FRP内外穿透 远程Windows</a></li>
-		<li><a href="./2020/eth_json_rpc/index.html">ETH JSON RPC</a></li>
-		<li><a href="./2020/systemctl_start/index.html">systemctl启动脚本参考</a></li>
-		<li><a href="./2020/spring_colud_intro/index.html">Spring Colud组件简介</a></li>
-		<li><a href="./2020/nodejs_contract_deploy/index.html">NodeJS合约部署</a></li>
-	</ul>
-
-	<h3>2019</h3>
-
-	<ul class="list">
-		<li><a href="./2019/nginx_conf/index.html">Nginx参考配置</a></li>
-		<li><a href="./2019/test/index.html">测试文章</a></li>
-	</ul>
-
-	<footer>
-		<a href="https://beian.miit.gov.cn" target="_blank">豫ICP备18003231号</a>
-	</footer>
+<div class="page-wrapper">
+  <div class="layout-container">
+    <main class="main-content">
+      <div class="content-container">
+        <div class="profile-section">
+          <div class="profile-card">
+            <div class="avatar"
+                 style='background-image: url("avatar.jpg");'>
+            </div>
+            <div class="details">
+              <div class="name">Zane Zhang</div>
+              <div class="contact">
+                <a href="https://x.com/zanezhangzz" target="_blank">X</a>
+                <a href="https://github.com/zanezhangzz" target="_blank">GitHub</a>
+              </div>
+              <div class="contact">
+                <a href="mailto:blacktea.zzzz@gmail.com">blacktea.zzzz@gmail.com</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="articles-section">
+          <div class="article">
+            <a href="product/youtube-summary-free/index.html">
+              <p>"Free YouTube Video Summary" Chrome Extension</p>
+              <p>"免费YouTube视频总结" Chrome 插件</p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
 </body>
 </html>
